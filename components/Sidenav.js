@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import style from '../styles/Sidenav.module.css'
 import { useState, useRef } from 'react'
+import { useEffect, useRef1 } from 'react';
 const Sidenav = () => {
 
     const snav = useRef(0);
@@ -11,9 +12,9 @@ const Sidenav = () => {
         // document.getElementById("main").style.marginLeft = "250px";
         // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
         // console.log(snav);
-        mai.current.style.backgroundColor="rgba(0,0,0,0.4)"
+        mai.current.style.backgroundColor="linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1))";
         snav.current.style.width="250px";
-        mai.current.style.marginLeft="250px";
+        mai.current.style.marginLeft="1500px";
       }
       
       function closeNav() {
@@ -23,8 +24,10 @@ const Sidenav = () => {
 
         snav.current.style.width="0px";
         mai.current.style.marginLeft="0px";
-        mai.current.style.backgroundColor="white"
+        mai.current.style.backgroundColor="linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1))";
       }
+   
+
     return (
 
        <>
@@ -33,9 +36,11 @@ const Sidenav = () => {
 
           body {
               font-family: "Lato", sans-serif;
-              transition: background-color .5s;
+              background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
+
+              transition: .5s;
             }
-            
+        
             .sidenav {
               height: 100%;
               width: 0;
@@ -43,7 +48,7 @@ const Sidenav = () => {
               z-index: 1;
               top: 0;
               left: 0;
-              background-color: #111;
+              background-color:  linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
               overflow-x: hidden;
               transition: 0.5s;
               padding-top: 60px;
@@ -71,8 +76,12 @@ const Sidenav = () => {
             }
             
             #main {
-              transition: margin-left .5s;
-              padding: 16px;
+              position: absolute;
+              top: 15px;
+       
+          
+              transition: margin-left .4s;
+              padding:15px;
             }
             
             @media screen and (max-height: 450px) {
@@ -83,18 +92,21 @@ const Sidenav = () => {
             `}
         </style>
         <div id="mySidenav" ref={snav} className="sidenav">
-            <Link href="#"><a  className="closebtn" onClick={()=>closeNav()}>&times;</a></Link>
-            <Link href="#"><a >About</a></Link>
-            <Link href="#"><a >Services</a></Link>
-            <Link href="#"><a >Clients</a></Link>
-            <Link href="#"><a >Contact</a></Link>
+            <Link href="#"><a  className="closebtn" onClick={()=>closeNav()}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="White" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+  <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+</svg></a></Link>
+            <Link href="#"><a >Your Slots</a></Link>
+            <Link href="#"><a >Queues</a></Link>
+            <Link href="#"><a >Your Queues</a></Link>
+            <Link href="#"><a >LogOut</a></Link>
         </div>
 
         <div id="main" ref={mai}>
-          <span style={{fontSize:"30px" ,  cursor:"pointer"}} onClick={()=>openNav()}>&#9776; open</span>
-            <h2>Sidenav Push Example</h2>
-            <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
-            
+          <span style={{color:"white",cursor:"pointer"}} onClick={()=>openNav()}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="White" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"></path>
+  <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"></path>
+</svg></span>
         </div>
 
 
