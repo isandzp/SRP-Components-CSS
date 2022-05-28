@@ -62,12 +62,12 @@ function StopWatch() {
                 //background: #fff;
                 padding: 30px;
                 border-radius: 15px;
-                box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+                box-shadow: 0px 25px 20px rgba(0,0,0,0.1);
 
               
             }
             .container {
-    padding:200px 50px 15px 40px;;
+    padding:200px 50px 15px 50px;;
   }
   form .btn{
     height: 50px;

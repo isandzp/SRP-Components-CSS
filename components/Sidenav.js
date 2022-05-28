@@ -51,7 +51,8 @@ const Sidenav = () => {
               z-index: 1;
               top: 0;
               left: 0;
-              background-color: #000000;
+              background-color: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
+
               overflow-x: hidden;
               transition: 0.3s;
               padding-top: 60px;
