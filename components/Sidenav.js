@@ -3,7 +3,6 @@ import style from '../styles/Sidenav.module.css'
 import { useState, useRef } from 'react'
 import { useEffect, useRef1 } from 'react';
 const Sidenav = () => {
-
     const snav = useRef(0);
     const mai=useRef(0);
 
@@ -14,7 +13,10 @@ const Sidenav = () => {
         // console.log(snav);
         mai.current.style.backgroundColor="linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1))";
         snav.current.style.width="250px";
-        mai.current.style.marginLeft="1500px";
+        //mai.current.style.marginLeft="500px";
+        mai.current.style.marginTop="300px";
+       // mai.current.style.fill="#0000";
+      
       }
       
       function closeNav() {
@@ -24,6 +26,7 @@ const Sidenav = () => {
 
         snav.current.style.width="0px";
         mai.current.style.marginLeft="0px";
+        mai.current.style.marginTop="10px"
         mai.current.style.backgroundColor="linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1))";
       }
    
@@ -50,7 +53,7 @@ const Sidenav = () => {
               left: 0;
               background-color:  linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
               overflow-x: hidden;
-              transition: 0.5s;
+              transition: 0.3s;
               padding-top: 60px;
             }
             
@@ -80,7 +83,7 @@ const Sidenav = () => {
               top: 15px;
        
           
-              transition: margin-left .4s;
+              transition: margin-left .3s;
               padding:15px;
             }
             
@@ -103,7 +106,7 @@ const Sidenav = () => {
         </div>
 
         <div id="main" ref={mai}>
-          <span style={{color:"white",cursor:"pointer"}} onClick={()=>openNav()}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="White" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+          <span style={{color:"white",cursor:"pointer"}} onClick={()=>openNav()}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="White" class="bi bi-chevron-double-right" viewBox="0 0 16 16">  
   <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"></path>
   <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"></path>
 </svg></span>
@@ -119,4 +122,4 @@ const Sidenav = () => {
       );
 }
  
-export default Sidenav;
+export default Sidenav; 
