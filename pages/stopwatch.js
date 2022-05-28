@@ -110,7 +110,7 @@ function StopWatch() {
            `}
           </style>
             
-     <div className="container"> 
+     <center><div className="container" > 
     <div className="stop-watch">
       <Timer time={time} />
       <ControlButtons
@@ -129,7 +129,7 @@ function StopWatch() {
     <div className="btn">
               <input type="submit" value="End Appointment"/>
               </div>
-  </form></div> </>
+  </form></div></center> </>
   );
 }
   
