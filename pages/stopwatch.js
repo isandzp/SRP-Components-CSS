@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Timer from "../components/Timer";
 import ControlButtons from "../components/ControlButton";
+import Sidenav from "../components/Sidenav";
   
 function StopWatch() {
   const [isActive, setIsActive] = useState(false);
@@ -40,134 +41,76 @@ function StopWatch() {
       <>
           <style jsx>{` 
           .stop-watch{
-                height: 300px;
+                height: 200px;
                 width: 500px;
                 background-color: #FFFF;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
+
+                //margin-left:600px;
+                padding: 4rem 0;
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                  box-sizing: border-box; 
+                  overflow: hidden;
+                max-width: 250px;
+                //background: #fff;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+
               
             }
             .container {
-    padding: 0 2rem;
+    padding:200px 50px 15px 40px;;
   }
-  .main {
-    min-height: 100vh;
-    padding: 4rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  form .btn{
+    height: 50px;
+    width: 100%;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    padding-top:20px;
   }
-  
-  .footer {
-    display: flex;
-    flex: 1;
-    padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
-    justify-content: center;
-    align-items: center;
+  form .btn .btn-layer{
+    height: 100%;
+    width: 300%;
+    position: absolute;
+    left: -100%;
+    /*background: -webkit-linear-gradient(right,#003366,#004080,#0059b3
+  , #0073e6);*/
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
+
+    border-radius: 15px;
+    transition: all 0.4s ease;;
   }
-  
-  .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
+  form .btn:hover .btn-layer{
+    left: 0;
   }
-  
-  .title a {
-    color: #0070f3;
-    text-decoration: none;
-  }
-  
-  .title a:hover,
-  .title a:focus,
-  .title a:active {
-    text-decoration: underline;
-  }
-  
-  .title {
-    margin: 0;
-    line-height: 1.15;
-    font-size: 4rem;
+  form .btn input[type="submit"]{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: relative;
+    background: #FFFFFF;
+    border: none;
+    color: #000000;
+    padding-left: 0;
+    border-radius: 15px;
+    font-size:25px;
+    font-weight: 500;
+    cursor: pointer;
   }
   
-  .title,
-  .description {
-    text-align: center;
-  }
-  
-  .description {
-    margin: 4rem 0;
-    line-height: 1.5;
-    font-size: 1.5rem;
-  }
-  
-  .code {
-    background: #fafafa;
-    border-radius: 5px;
-    padding: 0.75rem;
-    font-size: 1.1rem;
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-      Bitstream Vera Sans Mono, Courier New, monospace;
-  }
-  
-  .grid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 800px;
-  }
-  
-  .card {
-    margin: 1rem;
-    padding: 1.5rem;
-    text-align: left;
-    color: inherit;
-    text-decoration: none;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    transition: color 0.15s ease, border-color 0.15s ease;
-    max-width: 300px;
-  }
-  
-  .card:hover,
-  .card:focus,
-  .card:active {
-    color: #0070f3;
-    border-color: #0070f3;
-  }
-  
-  .card h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-  }
-  
-  .card p {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.5;
-  }
-  
-  .logo {
-    height: 1em;
-    margin-left: 0.5rem;
-  }
-  
-  @media (max-width: 600px) {
-    .grid {
-      width: 100%;
-      flex-direction: column;
-    }
-  }
            `}
           </style>
             
-      <div className="main">
+     <div className="container"> 
     <div className="stop-watch">
       <Timer time={time} />
       <ControlButtons
@@ -177,8 +120,16 @@ function StopWatch() {
         handlePauseResume={handlePauseResume}
         handleReset={handleReset}
       />
-    </div></div>
-    </>
+     
+  
+    </div>
+    
+  
+     <form>
+    <div className="btn">
+              <input type="submit" value="End Appointment"/>
+              </div>
+  </form></div> </>
   );
 }
   

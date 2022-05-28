@@ -9,7 +9,7 @@ export default function ControlButtons(props) {
   );
   const ActiveButtons = (
     <div className="btn-grp">
-      <div className="btn btn-two" 
+      <div className="btn btn-one" 
            onClick={props.handleReset}>
         Reset
       </div>
@@ -41,20 +41,22 @@ export default function ControlButtons(props) {
                 
                 .btn {
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-                width: 10vw;
-                height: 5vh;
+                width: 14vw;
+                height: 6vh;
                 border-radius: 14px;
                 margin: 0px 6px;
                 display: flex;
-                border: 2px solid #e42a2a;
+                border: 2px solid #FF0F0;
                 justify-content: center;
                 align-items: center;
                 cursor: pointer;
-                color: #f5f5f5;
+                color: #FFFFFF;
                 }
   
             .btn-one{
-                background-color: #e42a2a;
+                background-color: #000000;
+                width: 20vw;
+                height: 6vh;
             }
           `}
       </style>

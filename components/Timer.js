@@ -8,22 +8,23 @@ export default function Timer(props) {
           
                         
                 .timer{
-                    margin : 3rem 0;
+                   // margin : 3rem 0;
                     width: 100%;
                     display: flex;
                     height: 12%;
                     justify-content: center;
                     align-items: center;
+                    border-radius: 35px;
                 }
                 
                 .digits{
                     font-family: Verdana, Geneva, Tahoma, sans-serif;
                     font-size: 3rem;
-                    color:  #f5f5f5;
+                    color:  #FFFFF;
                 }
                 
                 .mili-sec{
-                    color:  #e42a2a;
+                    color:  #888888;
                 }
                         
           
